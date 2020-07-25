@@ -1,10 +1,8 @@
 # hello socket.io
 
-- 방에 접속하기 ( 사용자 이름 중복 체크 ) -메시지 보내기
+![sample.png](sample.png)
 
-- 다른 사용자 메시지 받기 -다른 사용자 목록 받기
-
-server/side
+### server/side
 
 - users state 관리
 
@@ -13,19 +11,22 @@ server/side
 - [ ] removeUser
 - [ ] getUsersInRoom
 
--socket.io 기능
+### socket logic
 
-- [ ] on connection
+- ServerSide:emit
+- message : client로 메시지를 보낸다. ✔
+- roomData : 방의 인원 정보를 보낸다. ✔
 
-- log entrance
+- ClientSide:emit
+- connection ✔
+- disconnect ✔
+- join ✔
+- sendMessage ✔
 
-- [ ] socket.on join
-
-- name,room 으로 접속
-  -- addUser
-  -- socket.join : room
-  -- socket.broadcast : message
-  -- io.to(room).emit : roomData
+- [ ] connection, disconnect
+- [ ] join : user등록,기본 메시지, 브로드 케스트 알림, room정보 제공
+- [ ] sendMessage & Message : 메시지 전파, cb
+- [ ] roomData : 방정보 전파 when join,disconnect
 
 # FB
 
@@ -35,16 +36,6 @@ server/side
 
 - 양방향 통신이라 머리 아프네...
 - emit을 할것만 정하자.
-
-- ServerSide:
-- message : client로 메시지를 보낸다.
-- roomData : 방의 인원 정보를 보낸다.
-
-- ClientSide:
-- connection ✔
-- disconnect ✔
-- join ✔
-- sendMessage
 
 # snippet
 
