@@ -26,3 +26,32 @@ server/side
   -- socket.join : room
   -- socket.broadcast : message
   -- io.to(room).emit : roomData
+
+# FB
+
+- react-router-dom : Link : onClick 이번트 > to 에 걸리 경로로 가는데, e.prevenDefault로 막을 수 있다.
+
+# FB
+
+- 양방향 통신이라 머리 아프네...
+- emit을 할것만 정하자.
+
+- ServerSide:
+- message : client로 메시지를 보낸다.
+- roomData : 방의 인원 정보를 보낸다.
+
+- ClientSide:
+- connection
+- disconnect
+- join
+- sendMessage
+
+# snippet
+
+```
+socket.join
+socket.emit("",{},()=>{}) call bakc
+socket.on("",({},()) =>{}))
+
+io.to().emit
+```
