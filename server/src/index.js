@@ -1,6 +1,6 @@
 const cors = require("cors");
 const express = require("express");
-const io = require("socket.io");
+const socketIO = require("socket.io");
 
 const app = express();
 
@@ -13,4 +13,8 @@ const server = app.listen(PORT, () => {
   console.log(`✔ server is running at http://localhost:${PORT}`);
 });
 
-module.exports = { server };
+const io = socketIO.listen(server);
+
+io.on("connection", (socket) => {
+  console.log(`[${socket.id}] is connection `);
+});
