@@ -41,9 +41,9 @@ server/side
 - roomData : 방의 인원 정보를 보낸다.
 
 - ClientSide:
-- connection
-- disconnect
-- join
+- connection ✔
+- disconnect ✔
+- join ✔
 - sendMessage
 
 # snippet
@@ -55,3 +55,7 @@ socket.on("",({},()) =>{}))
 
 io.to().emit
 ```
+
+- socket.emit 1:1 메시징
+- socket.broadcast.emit 나빼고 전부 메시징
+- io.to().emit 나 포함 전부 메시징

@@ -10,11 +10,13 @@ function Home() {
       <h1>Home</h1>
       <form>
         <input
+          placeholder="name"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
         ></input>
         <input
+          placeholder="room"
           type="text"
           value={room}
           onChange={(e) => setRoom(e.target.value)}
