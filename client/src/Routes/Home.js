@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaFacebookMessenger } from "react-icons/fa";
 import Input from "../components/Input";
+import Button from "../components/Button";
 
 function Home() {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
-  const [profile, setProfile] = useState("");
+  const [profile, setProfile] = useState(
+    "https://3.bp.blogspot.com/-qDc5kIFIhb8/UoJEpGN9DmI/AAAAAAABl1s/BfP6FcBY1R8/s1600/BlueHead.jpg"
+  );
 
   return (
     <Container>
@@ -18,8 +21,16 @@ function Home() {
         </div>
 
         <div className="profile">
-          <h2 className="profile__title">Set Profile</h2>
-          <form className="profile__from">
+          <h2 className="profile__title"> Profile</h2>
+          {profile && <img className="profile__image" src={profile}></img>}
+          <form className="profile__form">
+            <Input
+              className="profile__input"
+              placeholder="ProfileImage"
+              type="text"
+              value={profile}
+              onChange={(e) => setProfile(e.target.value)}
+            />
             <Input
               className="profile__input"
               placeholder="name"
@@ -35,11 +46,14 @@ function Home() {
               onChange={(e) => setRoom(e.target.value)}
             />
             <Link
-              className="profile__button"
               onClick={(e) => (!room || !name ? e.preventDefault() : null)}
-              to={`/chat?name=${name}&room=${room}`}
+              to={`/chat?name=${name}&room=${room}&profile=${profile}`}
             >
-              <button type="submit">Join DOS-chat 🤦‍♀️</button>
+              <Button className="profile__button" type="submit">
+                <span>
+                  Enter Room <FaFacebookMessenger />
+                </span>
+              </Button>
             </Link>
           </form>
         </div>
@@ -81,5 +95,49 @@ const Wrapper = styled.div`
     font-size: 70px;
     font-weight: bold;
     text-align: center;
+  }
+  & .profile {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7%;
+    background-color: ${(props) => props.theme.bgColor};
+
+    & .profile__title {
+      font-size: 24px;
+      text-align: center;
+      margin: 10px 0px;
+    }
+
+    & .profile__image {
+      background-size: cover;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+
+    & .profile__form {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      & .profile__input {
+        width: 80%;
+        margin: 10px 0px;
+        padding: 0px 10px;
+      }
+      & .profile__button {
+        width: 50%;
+        padding: 0px 10px;
+      }
+    }
   }
 `;

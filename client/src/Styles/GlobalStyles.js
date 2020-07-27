@@ -18,7 +18,11 @@ export default createGlobalStyle`
         color:${(props) => props.theme.blueColor};
         text-decoration:none;
     }
+    button,input{
+        all:unset;
+    }
     input:focus{
+        
         outline:none;
     }
 `;
