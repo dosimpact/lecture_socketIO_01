@@ -28,4 +28,11 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log(`${socket.id} is disconnection`);
   });
+
+  socket.on("join", () => {
+    console.log(`${socket.id} is join`);
+  });
+  socket.on("sendMessage", () => {
+    console.log(`${socket.id} is sendMessage`);
+  });
 });
