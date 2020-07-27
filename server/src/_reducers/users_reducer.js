@@ -3,6 +3,7 @@ import {
   REMOVE_USER,
   GET_USER_IN_ROOM,
   GET_USER,
+  ERROR_USER,
 } from "../_actions/types";
 
 export default (state = [], action) => {
@@ -14,8 +15,9 @@ export default (state = [], action) => {
         (user) => user.id !== action.payload.id
       );
       return [...filteredUsers];
+    case ERROR_USER:
+      return [...state];
     default:
-      // throw Error("No action Definition");
       return state;
   }
 };
