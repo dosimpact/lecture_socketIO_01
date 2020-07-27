@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import queryString from "query-string";
 import SocketIO from "socket.io-client";
 import styled from "styled-components";
+import Loading from "../components/Loading";
 
 let socket;
 
 function Chat({ location, history }) {
   const END_POINT = "http://localhost:4000/";
-  const { name, room } = queryString.parse(location.search);
+  const { name, room, profile } = queryString.parse(location.search);
   const [send, setSend] = useState("");
   const [msg, setMsg] = useState([]);
   const [users, setUsers] = useState([]);
@@ -52,10 +53,7 @@ function Chat({ location, history }) {
 
   return (
     <Container>
-      <div>
-        <h2>Dos - Chat</h2>
-        {isConnect ? "connect" : "connecting..."}
-      </div>
+      <div>{isConnect ? "" : <Loading />}</div>
       <div>
         <h2> Msg - </h2>
         <div>
@@ -98,4 +96,17 @@ function Chat({ location, history }) {
 
 export default Chat;
 
-const Container = styled.div``;
+const Container = styled.div`
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: ${(props) => props.theme.bgColor};
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;

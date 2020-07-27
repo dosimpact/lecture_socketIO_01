@@ -17,9 +17,11 @@ export default () => {
     <Header>
       <div className="header__container">
         <div className="header__column">
-          <FaFacebook className="main__logo" />
+          <a href="/">
+            <FaFacebook className="main__logo" />
+          </a>
           <div className="circle">
-            <FaSearch className="main__logo" />
+            <FaSearch className="main__logo2" />
           </div>
         </div>
         <div className="header__column nav__column">
@@ -79,15 +81,23 @@ const Header = styled.div`
     margin: 0px 5px;
     font-size: 40px;
     color: ${(props) => props.theme.blueColor};
-    &:last-child {
+    /* &:last-child {
       font-size: 20px;
       color: ${(props) => props.theme.darkGreyColor};
-    }
+    } */
+  }
+  & .main__logo2 {
+    cursor: pointer;
+    margin: 0px 5px;
+      font-size: 20px;
+      color: ${(props) => props.theme.darkGreyColor};
+ 
   }
   & .nav__logo {
     cursor: pointer;
     font-size: 30px;
     color: ${(props) => props.theme.darkGreyColor};
+    margin:0px 4px;
   }
   & .sub__logo {
     cursor: pointer;
