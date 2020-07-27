@@ -8,10 +8,13 @@ import {
 import Chat from "./Routes/Chat";
 import Home from "./Routes/Home";
 
+import Header from "./components/Header";
+
 function App() {
   return (
     <>
       <Router>
+        <Header />
         <Switch>
           <Route path="/" exact component={Home}></Route>
           <Route path="/chat" exact component={Chat}></Route>

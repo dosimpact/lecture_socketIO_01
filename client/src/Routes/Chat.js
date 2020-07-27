@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import queryString from "query-string";
 import SocketIO from "socket.io-client";
+import styled from "styled-components";
 
 let socket;
 
@@ -50,7 +51,7 @@ function Chat({ location, history }) {
   };
 
   return (
-    <>
+    <Container>
       <div>
         <h2>Dos - Chat</h2>
         {isConnect ? "connect" : "connecting..."}
@@ -91,8 +92,10 @@ function Chat({ location, history }) {
           <ul>{users && users.map((e, idx) => <li key={idx}>{e.name}</li>)}</ul>
         </div>
       </div>
-    </>
+    </Container>
   );
 }
 
 export default Chat;
+
+const Container = styled.div``;

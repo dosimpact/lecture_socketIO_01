@@ -50,3 +50,7 @@ io.to().emit
 - socket.emit 1:1 메시징
 - socket.broadcast.emit 나빼고 전부 메시징
 - io.to().emit 나 포함 전부 메시징
+
+# BUG
+
+- 뒤로가기하면, useEffect cleanup 안됨, 다시 또 들어가면 충돌
