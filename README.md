@@ -5,6 +5,27 @@
 ![sample01.png](sample01.png)
 ![sample03.png](sample03.png)
 
+# install
+
+```
+cd ./client && yarn install && yarn start
+cd ./server && yarn install && yarn start
+```
+
+# desc
+
+- socket.io 를 이용한 real-time 챗팅 App입니다.
+- 같은 Room 을 가진 사람끼리 대화할 수 있으며
+- 동명이인은 입장 불가합니다.
+- FaceBook Message 스타일을 클론 하였습니다.
+
+# STACK
+
+```
+node.js ( express, socket.io, redux )
+react ( styled-components)
+```
+
 ### server/side
 
 - users state 관리
