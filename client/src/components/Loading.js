@@ -16,10 +16,11 @@ function Loading() {
 
 export default Loading;
 const Container = styled.div`
-  max-width: 500px;
-  width: 100%;
   height: 500px;
   background-color: ${(props) => props.theme.bgColor};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Wrapper = styled.div`

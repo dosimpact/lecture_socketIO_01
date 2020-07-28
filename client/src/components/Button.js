@@ -1,9 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-function Input({ placeholder, type, className, value, onChange, children }) {
+function Input({
+  placeholder,
+  onClick,
+  type,
+  className,
+  value,
+  onChange,
+  children,
+}) {
   return (
     <SButton
+      onClick={onClick}
       className={className}
       placeholder={placeholder}
       type={type}

@@ -1,5 +1,7 @@
 # hello socket.io
 
+![00.gif](00.gif)
+![00.png](00.png)
 ![sample01.png](sample01.png)
 ![sample03.png](sample03.png)
 

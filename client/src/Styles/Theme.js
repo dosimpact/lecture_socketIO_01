@@ -8,7 +8,7 @@ export default {
   darkGreyColor: "#999",
   lightGreyColor: "#F0F2F5",
   redColor: "#ED4956",
-  blueColor: "#0B84ED",
+  blueColor: "#0099FF",
   darkBlueColor: "#003569",
 
   boxShadow: "rgba(0, 0, 0, 0.3) 0 1px 3px",

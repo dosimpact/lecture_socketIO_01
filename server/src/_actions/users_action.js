@@ -11,7 +11,7 @@ import {
 } from "./types";
 import store from "../store";
 
-export const addUser = ({ id, room, name }) => {
+export const addUser = ({ id, room, name, profile }) => {
   const { users } = store.getState();
   const existUser = users.find((e) => e.name === name);
   if (existUser) {
@@ -19,7 +19,7 @@ export const addUser = ({ id, room, name }) => {
   }
   return {
     type: ADD_USER,
-    payload: { id, room, name },
+    payload: { id, room, name, profile },
   };
 };
 export const removeUser = (id) => {
@@ -31,6 +31,7 @@ export const removeUser = (id) => {
 
 export const getUser = (id) => {
   const { users } = store.getState();
+  console.log("getUser", users);
   return {
     type: GET_USER,
     payload: {
@@ -41,6 +42,7 @@ export const getUser = (id) => {
 
 export const getUserInRoom = (room) => {
   const { users } = store.getState();
+  console.log("getUserInRoom", users);
   return {
     type: GET_USER_IN_ROOM,
     payload: {
